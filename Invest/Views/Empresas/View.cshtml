@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Invest.Data.Entities.Empresas>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CODIGO_CVM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNPJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOME_FANTASIA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOME_PREGAO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TIPO_PARTICIPANTE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SITUACAO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DATA_STATUS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CODIGO_LISTAGEM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_ClASSIFICACAO_SETORIAL)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODIGO_CVM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNPJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOME_FANTASIA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOME_PREGAO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIPO_PARTICIPANTE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SITUACAO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATA_STATUS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODIGO_LISTAGEM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_ClASSIFICACAO_SETORIAL)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

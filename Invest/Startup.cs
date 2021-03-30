@@ -1,4 +1,6 @@
 using Invest.Data;
+using Invest.Data.Entities;
+using Invest.Repositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +36,17 @@ namespace Invest
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            //Injeção de dependencia
+            services.AddScoped<ApplicationDbContext>();
+            services.AddScoped<IGenericRepository<ClassificacaoSetorial>, GenericRepository<ClassificacaoSetorial>>();
+            services.AddScoped<IGenericRepository<CodigoDeNegociacao>, GenericRepository<CodigoDeNegociacao>>();
+            services.AddScoped<IGenericRepository<Empresas>, GenericRepository<Empresas>>();
+            services.AddScoped<IGenericRepository<Segmento>, GenericRepository<Segmento>>();
+            services.AddScoped<IGenericRepository<Setor>, GenericRepository<Setor>>();
+            services.AddScoped<IGenericRepository<SubSetor>, GenericRepository<SubSetor>>();
+            services.AddScoped<IGenericRepository<IdentityUser>, GenericRepository<IdentityUser>>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
